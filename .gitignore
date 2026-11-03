@@ -1,0 +1,24 @@
+# 编译生成文件
+*.o
+*.obj
+*.hex
+*.bin
+*.lst
+*.map
+*.sym
+
+# 备份和临时文件
+*.bak
+*~
+*.swp
+
+# 编译输出目录（根据你的IDE实际名称修改）
+Objects/
+Listings/
+Output/
+Debug/
+Release/
+
+# 系统文件
+.DS_Store
+Thumbs.db

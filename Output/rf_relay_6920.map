@@ -1,0 +1,274 @@
+gplink-2.2.37 (Sep 18 2025)
+Map File - Created 2026-11-2  17:22:05
+ 
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                  STARTUP       code   00000000    program   0x000002
+             ID_main_12_i       code   0x000001    program   0x000004
+             ID_main_13_i       code   0x000003    program   0x000004
+              ID_main_0_i       code   0x000005    program   0x000002
+              ID_main_1_i       code   0x000006    program   0x000002
+              ID_main_2_i       code   0x000007    program   0x000002
+              c_interrupt       code   0x000008    program   0x000050
+                code_main       code   0x000030    program   0x0002a4
+                   .cinit       code   0x000182    program   0x0000b8
+              ID_main_3_i       code   0x0001de    program   0x000002
+              ID_main_4_i       code   0x0001df    program   0x000002
+              ID_main_5_i       code   0x0001e0    program   0x000002
+              ID_main_6_i       code   0x0001e1    program   0x000002
+              ID_main_7_i       code   0x0001e2    program   0x000002
+              ID_main_8_i       code   0x0001e3    program   0x000002
+              ID_main_9_i       code   0x0001e4    program   0x000002
+             ID_main_10_i       code   0x0001e5    program   0x000002
+             ID_main_11_i       code   0x0001e6    program   0x000002
+             ID_main_14_i       code   0x0001e7    program   0x000002
+               ID_main_12      idata   0x00001b       data   0x000002
+               ID_main_13      idata   0x00001d       data   0x000002
+                ID_main_0      idata   0x000022       data   0x000001
+                ID_main_1      idata   0x000023       data   0x000001
+                ID_main_2      idata   0x000024       data   0x000001
+                ID_main_3      idata   0x000025       data   0x000001
+                ID_main_4      idata   0x000026       data   0x000001
+                ID_main_5      idata   0x000027       data   0x000001
+                ID_main_6      idata   0x000028       data   0x000001
+                ID_main_7      idata   0x000029       data   0x000001
+                ID_main_8      idata   0x00002a       data   0x000001
+                ID_main_9      idata   0x00002b       data   0x000001
+               ID_main_10      idata   0x00002c       data   0x000001
+               ID_main_11      idata   0x00002d       data   0x000001
+               ID_main_14      idata   0x00002e       data   0x000001
+       UD_abs_mc30f6920_0      udata   00000000       data   0x000001
+       UD_abs_mc30f6920_1      udata   0x000001       data   0x000001
+       UD_abs_mc30f6920_2      udata   0x000002       data   0x000001
+       UD_abs_mc30f6920_3      udata   0x000003       data   0x000001
+       UD_abs_mc30f6920_4      udata   0x000004       data   0x000001
+       UD_abs_mc30f6920_5      udata   0x000005       data   0x000001
+       UD_abs_mc30f6920_6      udata   0x000006       data   0x000001
+       UD_abs_mc30f6920_8      udata   0x000008       data   0x000001
+       UD_abs_mc30f6920_9      udata   0x000009       data   0x000001
+       UD_abs_mc30f6920_a      udata   0x00000a       data   0x000001
+       UD_abs_mc30f6920_b      udata   0x00000b       data   0x000001
+       UD_abs_mc30f6920_c      udata   0x00000c       data   0x000001
+       UD_abs_mc30f6920_d      udata   0x00000d       data   0x000001
+       UD_abs_mc30f6920_e      udata   0x00000e       data   0x000001
+       UD_abs_mc30f6920_f      udata   0x00000f       data   0x000001
+                sharebank      udata   0x000010       data   0x000007
+               UDL_main_0      udata   0x000017       data   0x000004
+                UD_main_0      udata   0x00001f       data   0x000001
+                UD_main_1      udata   0x000020       data   0x000001
+                UD_main_2      udata   0x000021       data   0x000001
+      UD_abs_mc30f6920_40      udata   0x000040       data   0x000001
+      UD_abs_mc30f6920_41      udata   0x000041       data   0x000001
+      UD_abs_mc30f6920_42      udata   0x000042       data   0x000001
+      UD_abs_mc30f6920_43      udata   0x000043       data   0x000001
+      UD_abs_mc30f6920_44      udata   0x000044       data   0x000001
+      UD_abs_mc30f6920_45      udata   0x000045       data   0x000001
+      UD_abs_mc30f6920_46      udata   0x000046       data   0x000001
+      UD_abs_mc30f6920_4b      udata   0x00004b       data   0x000001
+      UD_abs_mc30f6920_4c      udata   0x00004c       data   0x000001
+      UD_abs_mc30f6920_4d      udata   0x00004d       data   0x000001
+      UD_abs_mc30f6920_4e      udata   0x00004e       data   0x000001
+      UD_abs_mc30f6920_4f      udata   0x00004f       data   0x000001
+      UD_abs_mc30f6920_50      udata   0x000050       data   0x000001
+      UD_abs_mc30f6920_51      udata   0x000051       data   0x000001
+      UD_abs_mc30f6920_52      udata   0x000052       data   0x000001
+      UD_abs_mc30f6920_55      udata   0x000055       data   0x000001
+      UD_abs_mc30f6920_56      udata   0x000056       data   0x000001
+      UD_abs_mc30f6920_57      udata   0x000057       data   0x000001
+      UD_abs_mc30f6920_5c      udata   0x00005c       data   0x000001
+      UD_abs_mc30f6920_5d      udata   0x00005d       data   0x000001
+      UD_abs_mc30f6920_5e      udata   0x00005e       data   0x000001
+      UD_abs_mc30f6920_5f      udata   0x00005f       data   0x000001
+ 
+                              Program Memory Usage
+                               Start         End
+                           ---------   ---------
+                            0x000005    0x000005
+                            0x000006    0x000006
+                            0x000007    0x000007
+                            0x0001de    0x0001de
+                            0x0001df    0x0001df
+                            0x0001e0    0x0001e0
+                            0x0001e1    0x0001e1
+                            0x0001e2    0x0001e2
+                            0x0001e3    0x0001e3
+                            0x0001e4    0x0001e4
+                            0x0001e5    0x0001e5
+                            0x0001e6    0x0001e6
+                            0x000001    0x000002
+                            0x000003    0x000004
+                            0x0001e7    0x0001e7
+                            00000000    00000000
+                            0x000008    0x00002f
+                            0x000030    0x000181
+                            0x000182    0x0001dd
+ 
+                            488 program addresses used
+ 
+                              Symbols
+                     Name    Address   Location    Storage File
+                ---------  ---------  ---------  --------- ---------
+                    STK06   0x000010       data     extern main.asm
+                    STK05   0x000011       data     extern main.asm
+                    STK04   0x000012       data     extern main.asm
+                    STK03   0x000013       data     extern main.asm
+                    STK02   0x000014       data     extern main.asm
+                    STK01   0x000015       data     extern main.asm
+                    STK00   0x000016       data     extern main.asm
+                    _abuf   0x00001f       data     extern main.asm
+               _statusbuf   0x000020       data     extern main.asm
+                   _flag1   0x000021       data     extern main.asm
+                  r0x100F   0x000017       data     static main.asm
+                  r0x1010   0x000018       data     static main.asm
+                  r0x1011   0x000019       data     static main.asm
+                  r0x1012   0x00001a       data     static main.asm
+                  _RX_PCL   0x000022       data     extern main.asm
+               _r_h_delay   0x000023       data     extern main.asm
+               _r_l_delay   0x000024       data     extern main.asm
+               _bit_count   0x000025       data     extern main.asm
+                  _RxTemp   0x000026       data     extern main.asm
+                 _RxCode1   0x000027       data     extern main.asm
+                 _RxCode2   0x000028       data     extern main.asm
+                 _RxCode4   0x000029       data     extern main.asm
+                 _r_HLbuf   0x00002a       data     extern main.asm
+                    _r_HL   0x00002b       data     extern main.asm
+                   _r_tol   0x00002c       data     extern main.asm
+               _f_dataout   0x00002d       data     extern main.asm
+                _activity   0x00001b       data     extern main.asm
+                _r_Timer1   0x00001d       data     extern main.asm
+               _sys_state   0x00002e       data     extern main.asm
+         __sdcc_interrupt   0x000008    program     static main.asm
+                 _int_isr   0x000008    program     extern main.asm
+               _00300_DS_   0x000010    program     static main.asm
+               _00309_DS_   0x00002b    program     static main.asm
+         END_OF_INTERRUPT   0x00002f    program     static main.asm
+                    _main   0x000030    program     extern main.asm
+               _00250_DS_   0x000031    program     static main.asm
+               _00291_DS_   0x00003c    program     static main.asm
+               _00232_DS_   0x00003f    program     static main.asm
+               _00233_DS_   0x000042    program     static main.asm
+               _00292_DS_   0x000048    program     static main.asm
+               _00235_DS_   0x00004c    program     static main.asm
+               _00238_DS_   0x00004e    program     static main.asm
+               _00293_DS_   0x000054    program     static main.asm
+               _00240_DS_   0x00005e    program     static main.asm
+               _00294_DS_   0x000063    program     static main.asm
+               _00243_DS_   0x000066    program     static main.asm
+               _00245_DS_   0x000077    program     static main.asm
+               _00247_DS_   0x00007b    program     static main.asm
+               _IR_Rx_fun   0x00008c    program     extern main.asm
+               _00207_DS_   0x00008f    program     static main.asm
+               _00226_DS_   0x000094    program     static main.asm
+               _00227_DS_   0x000099    program     static main.asm
+               _00208_DS_   0x00009a    program     static main.asm
+               _00209_DS_   0x00009c    program     static main.asm
+               _00210_DS_   0x00009e    program     static main.asm
+               _00212_DS_   0x00009f    program     static main.asm
+              _RX_DATA_HL   0x0000a0    program     static main.asm
+               _00167_DS_   0x0000a7    program     static main.asm
+               _00172_DS_   0x0000ae    program     static main.asm
+               _00173_DS_   0x0000b6    program     static main.asm
+               _00175_DS_   0x0000cd    program     static main.asm
+               _00182_DS_   0x0000cf    program     static main.asm
+               _00177_DS_   0x0000de    program     static main.asm
+               _00179_DS_   0x0000e0    program     static main.asm
+               _00183_DS_   0x0000e2    program     static main.asm
+               _00184_DS_   0x0000ed    program     static main.asm
+               _00185_DS_   0x0000ef    program     static main.asm
+               _00195_DS_   0x0000f6    program     static main.asm
+               _00188_DS_   0x000101    program     static main.asm
+               _00190_DS_   0x000109    program     static main.asm
+               _00191_DS_   0x00010c    program     static main.asm
+               _00196_DS_   0x000112    program     static main.asm
+               _00201_DS_   0x00012a    program     static main.asm
+                _RX_START   0x00012b    program     static main.asm
+               _00159_DS_   0x000134    program     static main.asm
+                _Sys_Init   0x000135    program     extern main.asm
+           _Clk_High_Init   0x00014a    program     extern main.asm
+               _00131_DS_   0x00014d    program     static main.asm
+               _00148_DS_   0x000159    program     static main.asm
+               _00127_DS_   0x00015b    program     static main.asm
+               _00133_DS_   0x00015c    program     static main.asm
+         _TIMER1_INT_Init   0x00015e    program     extern main.asm
+          _TIMER0_LP_Init   0x000167    program     extern main.asm
+                 _IO_Init   0x00016e    program     extern main.asm
+                 _CLR_RAM   0x000178    program     extern main.asm
+               _00107_DS_   0x00017a    program     static main.asm
+               _00109_DS_   0x000181    program     static main.asm
+                _INDFbits   00000000       data     extern mc30f6920.asm
+                    _INDF   00000000       data     extern mc30f6920.asm
+               _T0CNTbits   0x000001       data     extern mc30f6920.asm
+                   _T0CNT   0x000001       data     extern mc30f6920.asm
+                 _PCLbits   0x000002       data     extern mc30f6920.asm
+                     _PCL   0x000002       data     extern mc30f6920.asm
+              _STATUSbits   0x000003       data     extern mc30f6920.asm
+                  _STATUS   0x000003       data     extern mc30f6920.asm
+                 _FSRbits   0x000004       data     extern mc30f6920.asm
+                     _FSR   0x000004       data     extern mc30f6920.asm
+                  _P0bits   0x000005       data     extern mc30f6920.asm
+                      _P0   0x000005       data     extern mc30f6920.asm
+                  _P1bits   0x000006       data     extern mc30f6920.asm
+                      _P1   0x000006       data     extern mc30f6920.asm
+                 _MCRbits   0x000008       data     extern mc30f6920.asm
+                     _MCR   0x000008       data     extern mc30f6920.asm
+                _T0CRbits   0x000009       data     extern mc30f6920.asm
+                    _T0CR   0x000009       data     extern mc30f6920.asm
+              _PCLATHbits   0x00000a       data     extern mc30f6920.asm
+                  _PCLATH   0x00000a       data     extern mc30f6920.asm
+              _PDCON1bits   0x00000b       data     extern mc30f6920.asm
+                  _PDCON1   0x00000b       data     extern mc30f6920.asm
+              _PUCON1bits   0x00000c       data     extern mc30f6920.asm
+                  _PUCON1   0x00000c       data     extern mc30f6920.asm
+              _ODCON1bits   0x00000d       data     extern mc30f6920.asm
+                  _ODCON1   0x00000d       data     extern mc30f6920.asm
+                _INTEbits   0x00000e       data     extern mc30f6920.asm
+                    _INTE   0x00000e       data     extern mc30f6920.asm
+                _INTFbits   0x00000f       data     extern mc30f6920.asm
+                    _INTF   0x00000f       data     extern mc30f6920.asm
+              _P0KBCRbits   0x000040       data     extern mc30f6920.asm
+                  _P0KBCR   0x000040       data     extern mc30f6920.asm
+              _P1KBCRbits   0x000041       data     extern mc30f6920.asm
+                  _P1KBCR   0x000041       data     extern mc30f6920.asm
+               _OSCMRbits   0x000042       data     extern mc30f6920.asm
+                   _OSCMR   0x000042       data     extern mc30f6920.asm
+              _PDCON0bits   0x000043       data     extern mc30f6920.asm
+                  _PDCON0   0x000043       data     extern mc30f6920.asm
+              _PUCON0bits   0x000044       data     extern mc30f6920.asm
+                  _PUCON0   0x000044       data     extern mc30f6920.asm
+                _DDR0bits   0x000045       data     extern mc30f6920.asm
+                    _DDR0   0x000045       data     extern mc30f6920.asm
+                _DDR1bits   0x000046       data     extern mc30f6920.asm
+                    _DDR1   0x000046       data     extern mc30f6920.asm
+               _TMRCRbits   0x00004b       data     extern mc30f6920.asm
+                   _TMRCR   0x00004b       data     extern mc30f6920.asm
+                _T1CRbits   0x00004c       data     extern mc30f6920.asm
+                    _T1CR   0x00004c       data     extern mc30f6920.asm
+               _T1CNTbits   0x00004d       data     extern mc30f6920.asm
+                   _T1CNT   0x00004d       data     extern mc30f6920.asm
+              _T1LOADbits   0x00004e       data     extern mc30f6920.asm
+                  _T1LOAD   0x00004e       data     extern mc30f6920.asm
+              _T1DATAbits   0x00004f       data     extern mc30f6920.asm
+                  _T1DATA   0x00004f       data     extern mc30f6920.asm
+              _T1DATBbits   0x000050       data     extern mc30f6920.asm
+                  _T1DATB   0x000050       data     extern mc30f6920.asm
+              _T1DATCbits   0x000051       data     extern mc30f6920.asm
+                  _T1DATC   0x000051       data     extern mc30f6920.asm
+              _T1DATDbits   0x000052       data     extern mc30f6920.asm
+                  _T1DATD   0x000052       data     extern mc30f6920.asm
+             _PWM1CR0bits   0x000055       data     extern mc30f6920.asm
+                 _PWM1CR0   0x000055       data     extern mc30f6920.asm
+             _PWM1CR1bits   0x000056       data     extern mc30f6920.asm
+                 _PWM1CR1   0x000056       data     extern mc30f6920.asm
+             _PWM1CR2bits   0x000057       data     extern mc30f6920.asm
+                 _PWM1CR2   0x000057       data     extern mc30f6920.asm
+                _EECRbits   0x00005c       data     extern mc30f6920.asm
+                    _EECR   0x00005c       data     extern mc30f6920.asm
+                _EEPRbits   0x00005d       data     extern mc30f6920.asm
+                    _EEPR   0x00005d       data     extern mc30f6920.asm
+                _EEARbits   0x00005e       data     extern mc30f6920.asm
+                    _EEAR   0x00005e       data     extern mc30f6920.asm
+                _EEDRbits   0x00005f       data     extern mc30f6920.asm
+                    _EEDR   0x00005f       data     extern mc30f6920.asm
+                   _cinit   0x000182    program     extern  
+ 

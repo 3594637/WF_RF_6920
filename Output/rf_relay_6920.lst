@@ -1,0 +1,1177 @@
+gplink-2.2.37 (Sep 18 2025)
+Listing File Generated: 2026-11-2  17:22:05
+ 
+ 
+Address  Value    Disassembly              Source
+-------  -----    -----------              ------
+                                           ;--------------------------------------------------------
+                                           ; external declarations
+                                           ;--------------------------------------------------------
+                                           	extern	_Delay
+                                           	extern	_INDFbits
+                                           	extern	_T0CNTbits
+                                           	extern	_PCLbits
+                                           	extern	_STATUSbits
+                                           	extern	_FSRbits
+                                           	extern	_P0bits
+                                           	extern	_P1bits
+                                           	extern	_MCRbits
+                                           	extern	_T0CRbits
+                                           	extern	_PCLATHbits
+                                           	extern	_PDCON1bits
+                                           	extern	_PUCON1bits
+                                           	extern	_ODCON1bits
+                                           	extern	_INTEbits
+                                           	extern	_INTFbits
+                                           	extern	_P0KBCRbits
+                                           	extern	_P1KBCRbits
+                                           	extern	_OSCMRbits
+                                           	extern	_PDCON0bits
+                                           	extern	_PUCON0bits
+                                           	extern	_DDR0bits
+                                           	extern	_DDR1bits
+                                           	extern	_TMRCRbits
+                                           	extern	_T1CRbits
+                                           	extern	_T1CNTbits
+                                           	extern	_T1LOADbits
+                                           	extern	_T1DATAbits
+                                           	extern	_T1DATBbits
+                                           	extern	_T1DATCbits
+                                           	extern	_T1DATDbits
+                                           	extern	_PWM1CR0bits
+                                           	extern	_PWM1CR1bits
+                                           	extern	_PWM1CR2bits
+                                           	extern	_EECRbits
+                                           	extern	_EEPRbits
+                                           	extern	_EEARbits
+                                           	extern	_EEDRbits
+                                           	extern	_INDF
+                                           	extern	_T0CNT
+                                           	extern	_PCL
+                                           	extern	_STATUS
+                                           	extern	_FSR
+                                           	extern	_P0
+                                           	extern	_P1
+                                           	extern	_MCR
+                                           	extern	_T0CR
+                                           	extern	_PCLATH
+                                           	extern	_PDCON1
+                                           	extern	_PUCON1
+                                           	extern	_ODCON1
+                                           	extern	_INTE
+                                           	extern	_INTF
+                                           	extern	_P0KBCR
+                                           	extern	_P1KBCR
+                                           	extern	_OSCMR
+                                           	extern	_PDCON0
+                                           	extern	_PUCON0
+                                           	extern	_DDR0
+                                           	extern	_DDR1
+                                           	extern	_TMRCR
+                                           	extern	_T1CR
+                                           	extern	_T1CNT
+                                           	extern	_T1LOAD
+                                           	extern	_T1DATA
+                                           	extern	_T1DATB
+                                           	extern	_T1DATC
+                                           	extern	_T1DATD
+                                           	extern	_PWM1CR0
+                                           	extern	_PWM1CR1
+                                           	extern	_PWM1CR2
+                                           	extern	_EECR
+                                           	extern	_EEPR
+                                           	extern	_EEAR
+                                           	extern	_EEDR
+                                           ;--------------------------------------------------------
+                                           ; global declarations
+                                           ;--------------------------------------------------------
+                                           	global	_IR_Rx_fun
+                                           	global	_Sys_Init
+                                           	global	_TIMER1_INT_Init
+                                           	global	_IO_Init
+                                           	global	_CLR_RAM
+                                           	global	_TIMER0_LP_Init
+                                           	global	_Clk_High_Init
+                                           	global	_main
+                                           	global	_int_isr
+                                           	global	_abuf
+                                           	global	_statusbuf
+                                           	global	_flag1
+                                           	global	_RX_PCL
+                                           	global	_r_h_delay
+                                           	global	_r_l_delay
+                                           	global	_bit_count
+                                           	global	_RxTemp
+                                           	global	_RxCode1
+                                           	global	_RxCode2
+                                           	global	_RxCode4
+                                           	global	_r_HLbuf
+                                           	global	_r_HL
+                                           	global	_r_tol
+                                           	global	_f_dataout
+                                           	global	_activity
+                                           	global	_r_Timer1
+                                           	global	_sys_state
+                                           
+                                           	global STK06
+                                           	global STK05
+                                           	global STK04
+                                           	global STK03
+                                           	global STK02
+                                           	global STK01
+                                           	global STK00
+                                           
+                                           sharebank udata_ovr 0x0010
+                                           STK06	res 1
+                                           STK05	res 1
+                                           STK04	res 1
+                                           STK03	res 1
+                                           STK02	res 1
+                                           STK01	res 1
+                                           STK00	res 1
+                                           
+                                           ;--------------------------------------------------------
+                                           ; global definitions
+                                           ;--------------------------------------------------------
+                                           UD_main_0	udata
+                                           _abuf	res	1
+                                           
+                                           UD_main_1	udata
+                                           _statusbuf	res	1
+                                           
+                                           UD_main_2	udata
+                                           _flag1	res	1
+                                           
+                                           ;--------------------------------------------------------
+                                           ; absolute symbol definitions
+                                           ;--------------------------------------------------------
+                                           ;--------------------------------------------------------
+                                           ; compiler-defined variables
+                                           ;--------------------------------------------------------
+                                           UDL_main_0	udata
+                                           r0x100F	res	1
+                                           r0x1010	res	1
+                                           r0x1011	res	1
+                                           r0x1012	res	1
+                                           ;--------------------------------------------------------
+                                           ; initialized data
+                                           ;--------------------------------------------------------
+                                           
+                                           ID_main_0	idata
+                                           _RX_PCL
+                                           	db	0x00
+                                           
+                                           
+                                           ID_main_1	idata
+                                           _r_h_delay
+                                           	db	0x00
+                                           
+                                           
+                                           ID_main_2	idata
+                                           _r_l_delay
+                                           	db	0x00
+                                           
+                                           
+                                           ID_main_3	idata
+                                           _bit_count
+                                           	db	0x00
+                                           
+                                           
+                                           ID_main_4	idata
+                                           _RxTemp
+                                           	db	0x00
+                                           
+                                           
+                                           ID_main_5	idata
+                                           _RxCode1
+                                           	db	0x00
+                                           
+                                           
+                                           ID_main_6	idata
+                                           _RxCode2
+                                           	db	0x00
+                                           
+                                           
+                                           ID_main_7	idata
+                                           _RxCode4
+                                           	db	0x00
+                                           
+                                           
+                                           ID_main_8	idata
+                                           _r_HLbuf
+                                           	db	0x00
+                                           
+                                           
+                                           ID_main_9	idata
+                                           _r_HL
+                                           	db	0x00
+                                           
+                                           
+                                           ID_main_10	idata
+                                           _r_tol
+                                           	db	0x00
+                                           
+                                           
+                                           ID_main_11	idata
+                                           _f_dataout
+                                           	db	0x00
+                                           
+                                           
+                                           ID_main_12	idata
+                                           _activity
+                                           	db	0x00, 0x00
+                                           
+                                           
+                                           ID_main_13	idata
+                                           _r_Timer1
+                                           	db	0x00, 0x00
+                                           
+                                           
+                                           ID_main_14	idata
+                                           _sys_state
+                                           	db	0x00
+                                           
+                                           
+                                           ;@Allocation info for local variables in function 'CLR_RAM'
+                                           ;@CLR_RAM IO_Init                   Allocated to registers ;size:2
+                                           ;@CLR_RAM TIMER1_INT_Init           Allocated to registers ;size:2
+                                           ;@CLR_RAM Sys_Init                  Allocated to registers ;size:2
+                                           ;@CLR_RAM Delay                     Allocated to registers ;size:2
+                                           ;@CLR_RAM IR_Rx_fun                 Allocated to registers ;size:2
+                                           ;@CLR_RAM INDFbits                  Allocated to registers ;size:1
+                                           ;@CLR_RAM T0CNTbits                 Allocated to registers ;size:1
+                                           ;@CLR_RAM PCLbits                   Allocated to registers ;size:1
+                                           ;@CLR_RAM STATUSbits                Allocated to registers ;size:1
+                                           ;@CLR_RAM FSRbits                   Allocated to registers ;size:1
+                                           ;@CLR_RAM P0bits                    Allocated to registers ;size:1
+                                           ;@CLR_RAM P1bits                    Allocated to registers ;size:1
+                                           ;@CLR_RAM MCRbits                   Allocated to registers ;size:1
+                                           ;@CLR_RAM T0CRbits                  Allocated to registers ;size:1
+                                           ;@CLR_RAM PCLATHbits                Allocated to registers ;size:1
+                                           ;@CLR_RAM PDCON1bits                Allocated to registers ;size:1
+                                           ;@CLR_RAM PUCON1bits                Allocated to registers ;size:1
+                                           ;@CLR_RAM ODCON1bits                Allocated to registers ;size:1
+                                           ;@CLR_RAM INTEbits                  Allocated to registers ;size:1
+                                           ;@CLR_RAM INTFbits                  Allocated to registers ;size:1
+                                           ;@CLR_RAM P0KBCRbits                Allocated to registers ;size:1
+                                           ;@CLR_RAM P1KBCRbits                Allocated to registers ;size:1
+                                           ;@CLR_RAM OSCMRbits                 Allocated to registers ;size:1
+                                           ;@CLR_RAM PDCON0bits                Allocated to registers ;size:1
+                                           ;@CLR_RAM PUCON0bits                Allocated to registers ;size:1
+                                           ;@CLR_RAM DDR0bits                  Allocated to registers ;size:1
+                                           ;@CLR_RAM DDR1bits                  Allocated to registers ;size:1
+                                           ;@CLR_RAM TMRCRbits                 Allocated to registers ;size:1
+                                           ;@CLR_RAM T1CRbits                  Allocated to registers ;size:1
+                                           ;@CLR_RAM T1CNTbits                 Allocated to registers ;size:1
+                                           ;@CLR_RAM T1LOADbits                Allocated to registers ;size:1
+                                           ;@CLR_RAM T1DATAbits                Allocated to registers ;size:1
+                                           ;@CLR_RAM T1DATBbits                Allocated to registers ;size:1
+                                           ;@CLR_RAM T1DATCbits                Allocated to registers ;size:1
+                                           ;@CLR_RAM T1DATDbits                Allocated to registers ;size:1
+                                           ;@CLR_RAM PWM1CR0bits               Allocated to registers ;size:1
+                                           ;@CLR_RAM PWM1CR1bits               Allocated to registers ;size:1
+                                           ;@CLR_RAM PWM1CR2bits               Allocated to registers ;size:1
+                                           ;@CLR_RAM EECRbits                  Allocated to registers ;size:1
+                                           ;@CLR_RAM EEPRbits                  Allocated to registers ;size:1
+                                           ;@CLR_RAM EEARbits                  Allocated to registers ;size:1
+                                           ;@CLR_RAM EEDRbits                  Allocated to registers ;size:1
+                                           ;@CLR_RAM abuf                      Allocated to registers ;size:1
+                                           ;@CLR_RAM statusbuf                 Allocated to registers ;size:1
+                                           ;@CLR_RAM flag1                     Allocated to registers ;size:1
+                                           ;@CLR_RAM RX_PCL                    Allocated to registers ;size:1
+                                           ;@CLR_RAM r_h_delay                 Allocated to registers ;size:1
+                                           ;@CLR_RAM r_l_delay                 Allocated to registers ;size:1
+                                           ;@CLR_RAM bit_count                 Allocated to registers ;size:1
+                                           ;@CLR_RAM RxTemp                    Allocated to registers ;size:1
+                                           ;@CLR_RAM RxCode1                   Allocated to registers ;size:1
+                                           ;@CLR_RAM RxCode2                   Allocated to registers ;size:1
+                                           ;@CLR_RAM RxCode4                   Allocated to registers ;size:1
+                                           ;@CLR_RAM r_HLbuf                   Allocated to registers ;size:1
+                                           ;@CLR_RAM r_HL                      Allocated to registers ;size:1
+                                           ;@CLR_RAM r_tol                     Allocated to registers ;size:1
+                                           ;@CLR_RAM f_dataout                 Allocated to registers ;size:1
+                                           ;@CLR_RAM activity                  Allocated to registers ;size:2
+                                           ;@CLR_RAM r_Timer1                  Allocated to registers ;size:2
+                                           ;@CLR_RAM sys_state                 Allocated to registers ;size:1
+                                           ;@CLR_RAM INDF                      Allocated to registers ;size:1
+                                           ;@CLR_RAM T0CNT                     Allocated to registers ;size:1
+                                           ;@CLR_RAM PCL                       Allocated to registers ;size:1
+                                           ;@CLR_RAM STATUS                    Allocated to registers ;size:1
+                                           ;@CLR_RAM FSR                       Allocated to registers ;size:1
+                                           ;@CLR_RAM P0                        Allocated to registers ;size:1
+                                           ;@CLR_RAM P1                        Allocated to registers ;size:1
+                                           ;@CLR_RAM MCR                       Allocated to registers ;size:1
+                                           ;@CLR_RAM T0CR                      Allocated to registers ;size:1
+                                           ;@CLR_RAM PCLATH                    Allocated to registers ;size:1
+                                           ;@CLR_RAM PDCON1                    Allocated to registers ;size:1
+                                           ;@CLR_RAM PUCON1                    Allocated to registers ;size:1
+                                           ;@CLR_RAM ODCON1                    Allocated to registers ;size:1
+                                           ;@CLR_RAM INTE                      Allocated to registers ;size:1
+                                           ;@CLR_RAM INTF                      Allocated to registers ;size:1
+                                           ;@CLR_RAM P0KBCR                    Allocated to registers ;size:1
+                                           ;@CLR_RAM P1KBCR                    Allocated to registers ;size:1
+                                           ;@CLR_RAM OSCMR                     Allocated to registers ;size:1
+                                           ;@CLR_RAM PDCON0                    Allocated to registers ;size:1
+                                           ;@CLR_RAM PUCON0                    Allocated to registers ;size:1
+                                           ;@CLR_RAM DDR0                      Allocated to registers ;size:1
+                                           ;@CLR_RAM DDR1                      Allocated to registers ;size:1
+                                           ;@CLR_RAM TMRCR                     Allocated to registers ;size:1
+                                           ;@CLR_RAM T1CR                      Allocated to registers ;size:1
+                                           ;@CLR_RAM T1CNT                     Allocated to registers ;size:1
+                                           ;@CLR_RAM T1LOAD                    Allocated to registers ;size:1
+                                           ;@CLR_RAM T1DATA                    Allocated to registers ;size:1
+                                           ;@CLR_RAM T1DATB                    Allocated to registers ;size:1
+                                           ;@CLR_RAM T1DATC                    Allocated to registers ;size:1
+                                           ;@CLR_RAM T1DATD                    Allocated to registers ;size:1
+                                           ;@CLR_RAM PWM1CR0                   Allocated to registers ;size:1
+                                           ;@CLR_RAM PWM1CR1                   Allocated to registers ;size:1
+                                           ;@CLR_RAM PWM1CR2                   Allocated to registers ;size:1
+                                           ;@CLR_RAM EECR                      Allocated to registers ;size:1
+                                           ;@CLR_RAM EEPR                      Allocated to registers ;size:1
+                                           ;@CLR_RAM EEAR                      Allocated to registers ;size:1
+                                           ;@CLR_RAM EEDR                      Allocated to registers ;size:1
+                                           ;@end Allocation info for local variables in function 'CLR_RAM';
+                                           ;@Allocation info for local variables in function 'IO_Init'
+                                           ;@end Allocation info for local variables in function 'IO_Init';
+                                           ;@Allocation info for local variables in function 'TIMER0_LP_Init'
+                                           ;@end Allocation info for local variables in function 'TIMER0_LP_Init';
+                                           ;@Allocation info for local variables in function 'TIMER1_INT_Init'
+                                           ;@end Allocation info for local variables in function 'TIMER1_INT_Init';
+                                           ;@Allocation info for local variables in function 'Clk_High_Init'
+                                           ;@Clk_High_Init t                         Allocated to registers r0x100F r0x1010 ;size:2
+                                           ;@end Allocation info for local variables in function 'Clk_High_Init';
+                                           ;@Allocation info for local variables in function 'Sys_Init'
+                                           ;@end Allocation info for local variables in function 'Sys_Init';
+                                           ;@Allocation info for local variables in function 'RX_START'
+                                           ;@end Allocation info for local variables in function 'RX_START';
+                                           ;@Allocation info for local variables in function 'RX_DATA_HL'
+                                           ;@RX_DATA_HL d                         Allocated to registers ;size:1
+                                           ;@RX_DATA_HL t                         Allocated to registers r0x100F ;size:1
+                                           ;@end Allocation info for local variables in function 'RX_DATA_HL';
+                                           ;@Allocation info for local variables in function 'IR_Rx_fun'
+                                           ;@end Allocation info for local variables in function 'IR_Rx_fun';
+                                           ;@Allocation info for local variables in function 'main'
+                                           ;@end Allocation info for local variables in function 'main';
+                                           ;@Allocation info for local variables in function 'int_isr'
+                                           ;@end Allocation info for local variables in function 'int_isr';
+                                           
+                                           ;--------------------------------------------------------
+                                           ; overlayable items in internal ram 
+                                           ;--------------------------------------------------------
+                                           ;	udata_ovr
+                                           ;--------------------------------------------------------
+                                           ; reset vector 
+                                           ;--------------------------------------------------------
+                                           STARTUP	code 0x0000
+000000   2830     goto    0x30             	goto	_main
+                                           ;--------------------------------------------------------
+                                           ; interrupt and initialization code
+                                           ;--------------------------------------------------------
+                                           c_interrupt	code	0x8
+                                           __sdcc_interrupt
+                                           ;***
+                                           ;  pBlock Stats: dbName = I
+                                           ;***
+                                           ;entry:  _int_isr	;Function start
+                                           ; 0 exit points
+                                           ;; Starting pCode block
+                                           _int_isr	;Function start
+                                           ; 0 exit points
+                                           ;	.line	417; "main.c"	__endasm;
+000008   159f     movra   0x1f             	movra	_abuf
+000009   1103     swapar  0x3              	swapar	_STATUS
+00000a   15a0     movra   0x20             	movra	_statusbuf
+                                           ;	.line	419; "main.c"	if ((T0IF) && (T0IE))
+00000b   300f     jbset   0xf, 0           	JBSET	_INTFbits,0
+00000c   2810     goto    0x10             	GOTO	_00300_DS_
+00000d   300e     jbset   0xe, 0           	JBSET	_INTEbits,0
+00000e   2810     goto    0x10             	GOTO	_00300_DS_
+                                           ;	.line	421; "main.c"	T0IF = 0;    
+00000f   3c0f     bclr    0xf, 0           	BCLR	_INTFbits,0
+                                           _00300_DS_
+                                           ;	.line	423; "main.c"	if ((T1IF) && (T1IE))
+000010   304b     jbset   0x4b, 0          	JBSET	_TMRCRbits,0
+000011   282b     goto    0x2b             	GOTO	_00309_DS_
+000012   30cb     jbset   0x4b, 0x1        	JBSET	_TMRCRbits,1
+000013   282b     goto    0x2b             	GOTO	_00309_DS_
+                                           ;	.line	425; "main.c"	T1IF = 0;
+000014   3c4b     bclr    0x4b, 0          	BCLR	_TMRCRbits,0
+                                           ;	.line	426; "main.c"	T1IF = 0;
+000015   3c4b     bclr    0x4b, 0          	BCLR	_TMRCRbits,0
+                                           ;	.line	427; "main.c"	f_int_rx = 1;
+000016   3aa1     bset    0x21, 0x5        	BSET	_flag1,5
+                                           ;	.line	429; "main.c"	r_Timer1++;   
+000017   199d     incr    0x1d             	INCR	_r_Timer1
+000018   3503     jbclr   0x3, 0x2         	JBCLR	STATUS,2
+000019   199e     incr    0x1e             	INCR	(_r_Timer1 + 1)
+                                           ;	.line	433; "main.c"	if (f_dataout)
+00001a   0b00     movai   0                	MOVAI	0x00
+00001b   172d     orar    0x2d             	ORAR	_f_dataout
+00001c   3503     jbclr   0x3, 0x2         	JBCLR	STATUS,2
+00001d   282b     goto    0x2b             	GOTO	_00309_DS_
+                                           ;	.line	435; "main.c"	if (activity)
+00001e   161b     movar   0x1b             	MOVAR	_activity
+00001f   171c     orar    0x1c             	ORAR	(_activity + 1)
+000020   3503     jbclr   0x3, 0x2         	JBCLR	STATUS,2
+000021   282b     goto    0x2b             	GOTO	_00309_DS_
+                                           ;	.line	437; "main.c"	activity--;
+000022   0bff     movai   0xff             	MOVAI	0xff
+000023   1f9b     addra   0x1b             	ADDRA	_activity
+000024   3003     jbset   0x3, 0           	JBSET	STATUS,0
+000025   1b9c     decr    0x1c             	DECR	(_activity + 1)
+                                           ;	.line	438; "main.c"	if (activity == 0)
+000026   161b     movar   0x1b             	MOVAR	_activity
+000027   171c     orar    0x1c             	ORAR	(_activity + 1)
+000028   3103     jbset   0x3, 0x2         	JBSET	STATUS,2
+000029   282b     goto    0x2b             	GOTO	_00309_DS_
+                                           ;	.line	440; "main.c"	f_dataout = 0;
+00002a   1dad     clrr    0x2d             	CLRR	_f_dataout
+                                           _00309_DS_
+                                           ;	.line	452; "main.c"	__endasm;
+00002b   1120     swapar  0x20             	swapar	_statusbuf
+00002c   1583     movra   0x3              	movra	_STATUS
+00002d   119f     swapr   0x1f             	swapr	_abuf
+00002e   111f     swapar  0x1f             	swapar	_abuf
+                                           END_OF_INTERRUPT
+                                           ;	.line	453; "main.c"	}
+00002f   000d     retie                    	RETIE	
+                                           
+                                           ;--------------------------------------------------------
+                                           ; code
+                                           ;--------------------------------------------------------
+                                           code_main	code
+                                           ;***
+                                           ;  pBlock Stats: dbName = M
+                                           ;***
+                                           ;entry:  _main	;Function start
+                                           ; 2 exit points
+                                           ;has an exit
+                                           ;functions called:
+                                           ;   _Sys_Init
+                                           ;   _IR_Rx_fun
+                                           ;   _IR_Rx_fun
+                                           ;   _Clk_High_Init
+                                           ;   _TIMER1_INT_Init
+                                           ;   _Sys_Init
+                                           ;   _IR_Rx_fun
+                                           ;   _IR_Rx_fun
+                                           ;   _Clk_High_Init
+                                           ;   _TIMER1_INT_Init
+                                           ;2 compiler assigned registers:
+                                           ;   r0x1011
+                                           ;   r0x1012
+                                           ;; Starting pCode block
+                                           _main	;Function start
+                                           ; 2 exit points
+                                           ;	.line	331; "main.c"	Sys_Init();
+000030   2135     call    0x135            	CALL	_Sys_Init
+                                           ;;swapping arguments (AOP_TYPEs 1/3)
+                                           ;;unsigned compare: left >= lit(0x3=3), size=1
+                                           _00250_DS_
+                                           ;	.line	335; "main.c"	switch (sys_state)
+000031   0b03     movai   0x3              	MOVAI	0x03
+000032   122e     rsubar  0x2e             	RSUBAR	_sys_state
+000033   3403     jbclr   0x3, 0           	JBCLR	STATUS,0
+000034   2831     goto    0x31             	GOTO	_00250_DS_
+                                           ;;genSkipc:3291: created from rifx:013B5EFC
+000035   0b00     movai   0                	MOVAI	HIGH(_00291_DS_)
+000036   158a     movra   0xa              	MOVRA	PCLATH
+000037   0b3c     movai   0x3c             	MOVAI	_00291_DS_
+000038   1f2e     addar   0x2e             	ADDAR	_sys_state
+000039   3403     jbclr   0x3, 0           	JBCLR	STATUS,0
+00003a   198a     incr    0xa              	INCR	PCLATH
+00003b   1582     movra   0x2              	MOVRA	PCL
+                                           _00291_DS_
+00003c   283f     goto    0x3f             	GOTO	_00232_DS_
+00003d   2866     goto    0x66             	GOTO	_00243_DS_
+00003e   287b     goto    0x7b             	GOTO	_00247_DS_
+                                           _00232_DS_
+                                           ;	.line	339; "main.c"	io_RxEnable = 0;              /* 接收开 */
+00003f   3e86     bclr    0x6, 0x5         	BCLR	_P1bits,5
+                                           ;	.line	340; "main.c"	r_Timer1 = 0;
+000040   1d9d     clrr    0x1d             	CLRR	_r_Timer1
+000041   1d9e     clrr    0x1e             	CLRR	(_r_Timer1 + 1)
+                                           ;;unsigned compare: left < lit(0x1E=30), size=2
+                                           _00233_DS_
+                                           ;	.line	341; "main.c"	while (r_Timer1 < 30)         /* 30×33us ≈ 1ms 启动 */
+000042   0b00     movai   0                	MOVAI	0x00
+000043   121e     rsubar  0x1e             	RSUBAR	(_r_Timer1 + 1)
+000044   3103     jbset   0x3, 0x2         	JBSET	STATUS,2
+000045   2848     goto    0x48             	GOTO	_00292_DS_
+000046   0b1e     movai   0x1e             	MOVAI	0x1e
+000047   121d     rsubar  0x1d             	RSUBAR	_r_Timer1
+                                           _00292_DS_
+000048   3403     jbclr   0x3, 0           	JBCLR	STATUS,0
+000049   284c     goto    0x4c             	GOTO	_00235_DS_
+                                           ;;genSkipc:3291: created from rifx:013B5EFC
+                                           ;	.line	343; "main.c"	ClrWdt();
+00004a   000e     clrwdt                   	clrwdt	
+00004b   2842     goto    0x42             	GOTO	_00233_DS_
+                                           _00235_DS_
+                                           ;	.line	346; "main.c"	r_Timer1 = 0;
+00004c   1d9d     clrr    0x1d             	CLRR	_r_Timer1
+00004d   1d9e     clrr    0x1e             	CLRR	(_r_Timer1 + 1)
+                                           ;;unsigned compare: left < lit(0x258=600), size=2
+                                           _00238_DS_
+                                           ;	.line	347; "main.c"	while (r_Timer1 < 600)        /* 100×33us ≈ 5ms 监听 */
+00004e   0b02     movai   0x2              	MOVAI	0x02
+00004f   121e     rsubar  0x1e             	RSUBAR	(_r_Timer1 + 1)
+000050   3103     jbset   0x3, 0x2         	JBSET	STATUS,2
+000051   2854     goto    0x54             	GOTO	_00293_DS_
+000052   0b58     movai   0x58             	MOVAI	0x58
+000053   121d     rsubar  0x1d             	RSUBAR	_r_Timer1
+                                           _00293_DS_
+000054   3403     jbclr   0x3, 0           	JBCLR	STATUS,0
+000055   285e     goto    0x5e             	GOTO	_00240_DS_
+                                           ;;genSkipc:3291: created from rifx:013B5EFC
+                                           ;	.line	349; "main.c"	ClrWdt();
+000056   000e     clrwdt                   	clrwdt	
+                                           ;	.line	350; "main.c"	IR_Rx_fun();
+000057   208c     call    0x8c             	CALL	_IR_Rx_fun
+                                           ;	.line	351; "main.c"	if (f_dataout)
+000058   0b00     movai   0                	MOVAI	0x00
+000059   172d     orar    0x2d             	ORAR	_f_dataout
+00005a   3503     jbclr   0x3, 0x2         	JBCLR	STATUS,2
+00005b   284e     goto    0x4e             	GOTO	_00238_DS_
+                                           ;	.line	353; "main.c"	sys_state = ST_FORWARD;
+00005c   0b01     movai   0x1              	MOVAI	0x01
+00005d   15ae     movra   0x2e             	MOVRA	_sys_state
+                                           _00240_DS_
+                                           ;	.line	357; "main.c"	if (sys_state != ST_FORWARD)
+00005e   162e     movar   0x2e             	MOVAR	_sys_state
+00005f   0801     xorai   0x1              	XORAI	0x01
+000060   3103     jbset   0x3, 0x2         	JBSET	STATUS,2
+000061   2863     goto    0x63             	GOTO	_00294_DS_
+000062   2831     goto    0x31             	GOTO	_00250_DS_
+                                           _00294_DS_
+                                           ;	.line	358; "main.c"	sys_state = ST_SLEEP;
+000063   0b02     movai   0x2              	MOVAI	0x02
+000064   15ae     movra   0x2e             	MOVRA	_sys_state
+                                           ;	.line	359; "main.c"	break;
+000065   2831     goto    0x31             	GOTO	_00250_DS_
+                                           _00243_DS_
+                                           ;	.line	363; "main.c"	ClrWdt();
+000066   000e     clrwdt                   	clrwdt	
+                                           ;	.line	364; "main.c"	IR_Rx_fun();
+000067   208c     call    0x8c             	CALL	_IR_Rx_fun
+                                           ;	.line	366; "main.c"	if (f_dataout)// 转发: PT13 跟随 PT14 
+000068   0b00     movai   0                	MOVAI	0x00
+000069   172d     orar    0x2d             	ORAR	_f_dataout
+00006a   3503     jbclr   0x3, 0x2         	JBCLR	STATUS,2
+00006b   2877     goto    0x77             	GOTO	_00245_DS_
+                                           ;	.line	368; "main.c"	io_OUT = io_rfdata;     
+00006c   1d99     clrr    0x19             	CLRR	r0x1011
+00006d   3606     jbclr   0x6, 0x4         	JBCLR	_P1bits,4
+00006e   1999     incr    0x19             	INCR	r0x1011
+00006f   1619     movar   0x19             	MOVAR	r0x1011
+000070   159a     movra   0x1a             	MOVRA	r0x1012
+000071   131a     rrar    0x1a             	RRAR	r0x1012
+000072   3003     jbset   0x3, 0           	JBSET	STATUS,0
+000073   3d86     bclr    0x6, 0x3         	BCLR	_P1bits,3
+000074   3403     jbclr   0x3, 0           	JBCLR	STATUS,0
+000075   3986     bset    0x6, 0x3         	BSET	_P1bits,3
+000076   2831     goto    0x31             	GOTO	_00250_DS_
+                                           _00245_DS_
+                                           ;	.line	372; "main.c"	io_OUT = 0;          
+000077   3d86     bclr    0x6, 0x3         	BCLR	_P1bits,3
+                                           ;	.line	373; "main.c"	sys_state = ST_SLEEP;
+000078   0b02     movai   0x2              	MOVAI	0x02
+000079   15ae     movra   0x2e             	MOVRA	_sys_state
+                                           ;	.line	375; "main.c"	break;
+00007a   2831     goto    0x31             	GOTO	_00250_DS_
+                                           _00247_DS_
+                                           ;	.line	379; "main.c"	io_OUT = 0;                   /* 输出高 */
+00007b   3d86     bclr    0x6, 0x3         	BCLR	_P1bits,3
+                                           ;	.line	380; "main.c"	io_RxEnable = 1;              /* 接收关 */
+00007c   3a86     bset    0x6, 0x5         	BSET	_P1bits,5
+                                           ;	.line	382; "main.c"	T0CNT = 256 - 125;            /* 重装 200ms (100 x 2ms) */
+00007d   0b83     movai   0x83             	MOVAI	0x83
+00007e   1581     movra   0x1              	MOVRA	_T0CNT
+                                           ;	.line	384; "main.c"	T0IF  = 0;
+00007f   3c0f     bclr    0xf, 0           	BCLR	_INTFbits,0
+                                           ;	.line	385; "main.c"	T0IE  = 1;
+000080   380e     bset    0xe, 0           	BSET	_INTEbits,0
+                                           ;	.line	386; "main.c"	HFEN  = 0;
+000081   3c42     bclr    0x42, 0          	BCLR	_OSCMRbits,0
+                                           ;	.line	388; "main.c"	Stop();                       /* 睡 200ms -> T0 中断唤醒 */
+000082   000b     sleep                    	stop	
+                                           ;	.line	389; "main.c"	Nop();
+000083   0000     nop                      	nop	
+                                           ;	.line	390; "main.c"	Nop();
+000084   0000     nop                      	nop	
+                                           ;	.line	392; "main.c"	ClrWdt();                     /* 醒来先清狗*/
+000085   000e     clrwdt                   	clrwdt	
+                                           ;	.line	393; "main.c"	T0IE  = 0;
+000086   3c0e     bclr    0xe, 0           	BCLR	_INTEbits,0
+                                           ;	.line	396; "main.c"	Clk_High_Init();
+000087   214a     call    0x14a            	CALL	_Clk_High_Init
+                                           ;	.line	397; "main.c"	TIMER1_INT_Init();
+000088   215e     call    0x15e            	CALL	_TIMER1_INT_Init
+                                           ;	.line	399; "main.c"	sys_state = ST_LISTEN;
+000089   1dae     clrr    0x2e             	CLRR	_sys_state
+                                           ;	.line	401; "main.c"	}
+00008a   2831     goto    0x31             	GOTO	_00250_DS_
+                                           ;	.line	403; "main.c"	}
+00008b   000c     return                   	RETURN	
+                                           ; exit point of _main
+                                           
+                                           ;***
+                                           ;  pBlock Stats: dbName = C
+                                           ;***
+                                           ;entry:  _IR_Rx_fun	;Function start
+                                           ; 2 exit points
+                                           ;has an exit
+                                           ;functions called:
+                                           ;   _RX_START
+                                           ;   _RX_DATA_HL
+                                           ;   _RX_START
+                                           ;   _RX_DATA_HL
+                                           ;; Starting pCode block
+                                           _IR_Rx_fun	;Function start
+                                           ; 2 exit points
+                                           ;	.line	308; "main.c"	if (f_int_rx == 0)
+00008c   36a1     jbclr   0x21, 0x5        	JBCLR	_flag1,5
+00008d   288f     goto    0x8f             	GOTO	_00207_DS_
+                                           ;	.line	310; "main.c"	return;
+00008e   289f     goto    0x9f             	GOTO	_00212_DS_
+                                           _00207_DS_
+                                           ;	.line	313; "main.c"	f_int_rx = 0;
+00008f   3ea1     bclr    0x21, 0x5        	BCLR	_flag1,5
+                                           ;	.line	315; "main.c"	switch (RX_PCL)
+000090   1622     movar   0x22             	MOVAR	_RX_PCL
+000091   3103     jbset   0x3, 0x2         	JBSET	STATUS,2
+000092   2894     goto    0x94             	GOTO	_00226_DS_
+000093   289a     goto    0x9a             	GOTO	_00208_DS_
+                                           _00226_DS_
+000094   1622     movar   0x22             	MOVAR	_RX_PCL
+000095   0801     xorai   0x1              	XORAI	0x01
+000096   3103     jbset   0x3, 0x2         	JBSET	STATUS,2
+000097   2899     goto    0x99             	GOTO	_00227_DS_
+000098   289c     goto    0x9c             	GOTO	_00209_DS_
+                                           _00227_DS_
+000099   289e     goto    0x9e             	GOTO	_00210_DS_
+                                           _00208_DS_
+                                           ;	.line	317; "main.c"	case 0: RX_START();     break;
+00009a   212b     call    0x12b            	CALL	_RX_START
+00009b   289f     goto    0x9f             	GOTO	_00212_DS_
+                                           _00209_DS_
+                                           ;	.line	318; "main.c"	case 1: RX_DATA_HL();   break;
+00009c   20a0     call    0xa0             	CALL	_RX_DATA_HL
+00009d   289f     goto    0x9f             	GOTO	_00212_DS_
+                                           _00210_DS_
+                                           ;	.line	319; "main.c"	default: RX_PCL = 0;    break;
+00009e   1da2     clrr    0x22             	CLRR	_RX_PCL
+                                           _00212_DS_
+                                           ;	.line	321; "main.c"	}
+00009f   000c     return                   	RETURN	
+                                           ; exit point of _IR_Rx_fun
+                                           
+                                           ;***
+                                           ;  pBlock Stats: dbName = C
+                                           ;***
+                                           ;entry:  _RX_DATA_HL	;Function start
+                                           ; 2 exit points
+                                           ;has an exit
+                                           ;2 compiler assigned registers:
+                                           ;   r0x100F
+                                           ;   r0x1010
+                                           ;; Starting pCode block
+                                           _RX_DATA_HL	;Function start
+                                           ; 2 exit points
+                                           ;	.line	218; "main.c"	if (io_rfdata)                  /* 高电平 */
+0000a0   3206     jbset   0x6, 0x4         	JBSET	_P1bits,4
+0000a1   28ae     goto    0xae             	GOTO	_00172_DS_
+                                           ;	.line	220; "main.c"	if (f_hl)                   /* 低->高, 上升沿 */
+0000a2   31a1     jbset   0x21, 0x3        	JBSET	_flag1,3
+0000a3   28a7     goto    0xa7             	GOTO	_00167_DS_
+                                           ;	.line	222; "main.c"	f_hl = 0;
+0000a4   3da1     bclr    0x21, 0x3        	BCLR	_flag1,3
+                                           ;	.line	223; "main.c"	f_getRfDataBits = 1;
+0000a5   3a21     bset    0x21, 0x4        	BSET	_flag1,4
+0000a6   28b6     goto    0xb6             	GOTO	_00173_DS_
+                                           _00167_DS_
+                                           ;	.line	227; "main.c"	r_h_delay++;
+0000a7   19a3     incr    0x23             	INCR	_r_h_delay
+                                           ;;swapping arguments (AOP_TYPEs 1/3)
+                                           ;;unsigned compare: left >= lit(0x41=65), size=1
+                                           ;	.line	228; "main.c"	if (r_h_delay > LEVEL_TOUT) { RX_PCL = 0; return; }
+0000a8   0b41     movai   0x41             	MOVAI	0x41
+0000a9   1223     rsubar  0x23             	RSUBAR	_r_h_delay
+0000aa   3003     jbset   0x3, 0           	JBSET	STATUS,0
+0000ab   28b6     goto    0xb6             	GOTO	_00173_DS_
+                                           ;;genSkipc:3291: created from rifx:013B5EFC
+0000ac   1da2     clrr    0x22             	CLRR	_RX_PCL
+0000ad   292a     goto    0x12a            	GOTO	_00201_DS_
+                                           _00172_DS_
+                                           ;	.line	233; "main.c"	f_hl = 1;
+0000ae   39a1     bset    0x21, 0x3        	BSET	_flag1,3
+                                           ;	.line	234; "main.c"	r_l_delay++;
+0000af   19a4     incr    0x24             	INCR	_r_l_delay
+                                           ;;swapping arguments (AOP_TYPEs 1/3)
+                                           ;;unsigned compare: left >= lit(0x41=65), size=1
+                                           ;	.line	235; "main.c"	if (r_l_delay > LEVEL_TOUT) { RX_PCL = 0; return; }
+0000b0   0b41     movai   0x41             	MOVAI	0x41
+0000b1   1224     rsubar  0x24             	RSUBAR	_r_l_delay
+0000b2   3003     jbset   0x3, 0           	JBSET	STATUS,0
+0000b3   28b6     goto    0xb6             	GOTO	_00173_DS_
+                                           ;;genSkipc:3291: created from rifx:013B5EFC
+0000b4   1da2     clrr    0x22             	CLRR	_RX_PCL
+0000b5   292a     goto    0x12a            	GOTO	_00201_DS_
+                                           _00173_DS_
+                                           ;	.line	238; "main.c"	if (f_getRfDataBits)
+0000b6   3221     jbset   0x21, 0x4        	JBSET	_flag1,4
+0000b7   292a     goto    0x12a            	GOTO	_00201_DS_
+                                           ;	.line	240; "main.c"	f_getRfDataBits = 0;
+0000b8   3e21     bclr    0x21, 0x4        	BCLR	_flag1,4
+                                           ;	.line	241; "main.c"	RxTemp <<= 1;
+0000b9   1626     movar   0x26             	MOVAR	_RxTemp
+0000ba   1597     movra   0x17             	MOVRA	r0x100F
+0000bb   3c03     bclr    0x3, 0           	BCLR	STATUS,0
+0000bc   1417     rlar    0x17             	RLAR	r0x100F
+0000bd   15a6     movra   0x26             	MOVRA	_RxTemp
+                                           ;	.line	243; "main.c"	if (r_h_delay > r_l_delay)          /* 高>低 -> 1 */
+0000be   1623     movar   0x23             	MOVAR	_r_h_delay
+0000bf   1224     rsubar  0x24             	RSUBAR	_r_l_delay
+0000c0   3403     jbclr   0x3, 0           	JBCLR	STATUS,0
+0000c1   28cf     goto    0xcf             	GOTO	_00182_DS_
+                                           ;;genSkipc:3291: created from rifx:013B5EFC
+                                           ;	.line	245; "main.c"	t  = r_l_delay;
+0000c2   1624     movar   0x24             	MOVAR	_r_l_delay
+0000c3   1597     movra   0x17             	MOVRA	r0x100F
+                                           ;	.line	246; "main.c"	t += t;                          /* 2*低, 8bit */
+0000c4   3c03     bclr    0x3, 0           	BCLR	STATUS,0
+0000c5   1417     rlar    0x17             	RLAR	r0x100F
+0000c6   1598     movra   0x18             	MOVRA	r0x1010
+                                           ;	.line	247; "main.c"	if (r_h_delay < t) { RX_PCL = 0; return; }   /* <2:1 噪声 */
+0000c7   1618     movar   0x18             	MOVAR	r0x1010
+0000c8   1223     rsubar  0x23             	RSUBAR	_r_h_delay
+0000c9   3403     jbclr   0x3, 0           	JBCLR	STATUS,0
+0000ca   28cd     goto    0xcd             	GOTO	_00175_DS_
+                                           ;;genSkipc:3291: created from rifx:013B5EFC
+0000cb   1da2     clrr    0x22             	CLRR	_RX_PCL
+0000cc   292a     goto    0x12a            	GOTO	_00201_DS_
+                                           _00175_DS_
+                                           ;	.line	248; "main.c"	RxTemp |= 0x01;
+0000cd   3826     bset    0x26, 0          	BSET	_RxTemp,0
+0000ce   28e2     goto    0xe2             	GOTO	_00183_DS_
+                                           _00182_DS_
+                                           ;	.line	250; "main.c"	else if (r_h_delay < r_l_delay)     /* 高<低 -> 0 */
+0000cf   1624     movar   0x24             	MOVAR	_r_l_delay
+0000d0   1223     rsubar  0x23             	RSUBAR	_r_h_delay
+0000d1   3403     jbclr   0x3, 0           	JBCLR	STATUS,0
+0000d2   28e0     goto    0xe0             	GOTO	_00179_DS_
+                                           ;;genSkipc:3291: created from rifx:013B5EFC
+                                           ;	.line	252; "main.c"	t  = r_h_delay;
+0000d3   1623     movar   0x23             	MOVAR	_r_h_delay
+0000d4   1597     movra   0x17             	MOVRA	r0x100F
+                                           ;	.line	253; "main.c"	t += t;                          /* 2*高, 8bit */
+0000d5   3c03     bclr    0x3, 0           	BCLR	STATUS,0
+0000d6   1417     rlar    0x17             	RLAR	r0x100F
+0000d7   1598     movra   0x18             	MOVRA	r0x1010
+                                           ;	.line	254; "main.c"	if (r_l_delay < t) { RX_PCL = 0; return; }
+0000d8   1618     movar   0x18             	MOVAR	r0x1010
+0000d9   1224     rsubar  0x24             	RSUBAR	_r_l_delay
+0000da   3403     jbclr   0x3, 0           	JBCLR	STATUS,0
+0000db   28de     goto    0xde             	GOTO	_00177_DS_
+                                           ;;genSkipc:3291: created from rifx:013B5EFC
+0000dc   1da2     clrr    0x22             	CLRR	_RX_PCL
+0000dd   292a     goto    0x12a            	GOTO	_00201_DS_
+                                           _00177_DS_
+                                           ;	.line	255; "main.c"	RxTemp &= 0xfe;
+0000de   3c26     bclr    0x26, 0          	BCLR	_RxTemp,0
+0000df   28e2     goto    0xe2             	GOTO	_00183_DS_
+                                           _00179_DS_
+                                           ;	.line	259; "main.c"	RX_PCL = 0;
+0000e0   1da2     clrr    0x22             	CLRR	_RX_PCL
+                                           ;	.line	260; "main.c"	return;
+0000e1   292a     goto    0x12a            	GOTO	_00201_DS_
+                                           _00183_DS_
+                                           ;	.line	263; "main.c"	r_HL = r_h_delay + r_l_delay;
+0000e2   1624     movar   0x24             	MOVAR	_r_l_delay
+0000e3   1f23     addar   0x23             	ADDAR	_r_h_delay
+0000e4   15ab     movra   0x2b             	MOVRA	_r_HL
+                                           ;;unsigned compare: left < lit(0xA=10), size=1
+                                           ;	.line	265; "main.c"	if (r_HL < BIT_MIN || r_HL > BIT_MAX)
+0000e5   0b0a     movai   0xa              	MOVAI	0x0a
+0000e6   122b     rsubar  0x2b             	RSUBAR	_r_HL
+0000e7   3003     jbset   0x3, 0           	JBSET	STATUS,0
+0000e8   28ed     goto    0xed             	GOTO	_00184_DS_
+                                           ;;genSkipc:3291: created from rifx:013B5EFC
+                                           ;;swapping arguments (AOP_TYPEs 1/3)
+                                           ;;unsigned compare: left >= lit(0x51=81), size=1
+0000e9   0b51     movai   0x51             	MOVAI	0x51
+0000ea   122b     rsubar  0x2b             	RSUBAR	_r_HL
+0000eb   3003     jbset   0x3, 0           	JBSET	STATUS,0
+0000ec   28ef     goto    0xef             	GOTO	_00185_DS_
+                                           ;;genSkipc:3291: created from rifx:013B5EFC
+                                           _00184_DS_
+                                           ;	.line	267; "main.c"	RX_PCL = 0;
+0000ed   1da2     clrr    0x22             	CLRR	_RX_PCL
+                                           ;	.line	268; "main.c"	return;
+0000ee   292a     goto    0x12a            	GOTO	_00201_DS_
+                                           _00185_DS_
+                                           ;	.line	271; "main.c"	if (bit_count == 0)
+0000ef   0b00     movai   0                	MOVAI	0x00
+0000f0   1725     orar    0x25             	ORAR	_bit_count
+0000f1   3103     jbset   0x3, 0x2         	JBSET	STATUS,2
+0000f2   28f6     goto    0xf6             	GOTO	_00195_DS_
+                                           ;	.line	273; "main.c"	r_HLbuf = r_HL;
+0000f3   162b     movar   0x2b             	MOVAR	_r_HL
+0000f4   15aa     movra   0x2a             	MOVRA	_r_HLbuf
+0000f5   2912     goto    0x112            	GOTO	_00196_DS_
+                                           ;;shiftRight_Left2ResultLit:5339: shCount=1, size=1, sign=0, same=0, offr=0
+                                           _00195_DS_
+                                           ;	.line	277; "main.c"	r_tol = r_HLbuf >> 2;
+0000f6   3c03     bclr    0x3, 0           	BCLR	STATUS,0
+0000f7   132a     rrar    0x2a             	RRAR	_r_HLbuf
+0000f8   15ac     movra   0x2c             	MOVRA	_r_tol
+                                           ;;shiftRight_Left2ResultLit:5339: shCount=1, size=1, sign=0, same=1, offr=0
+0000f9   3c03     bclr    0x3, 0           	BCLR	STATUS,0
+0000fa   13ac     rrr     0x2c             	RRR	_r_tol
+                                           ;;unsigned compare: left < lit(0x2=2), size=1
+                                           ;	.line	278; "main.c"	if (r_tol < 2) { r_tol = 2; }
+0000fb   0b02     movai   0x2              	MOVAI	0x02
+0000fc   122c     rsubar  0x2c             	RSUBAR	_r_tol
+0000fd   3403     jbclr   0x3, 0           	JBCLR	STATUS,0
+0000fe   2901     goto    0x101            	GOTO	_00188_DS_
+                                           ;;genSkipc:3291: created from rifx:013B5EFC
+0000ff   0b02     movai   0x2              	MOVAI	0x02
+000100   15ac     movra   0x2c             	MOVRA	_r_tol
+                                           _00188_DS_
+                                           ;	.line	280; "main.c"	if (r_HL > r_HLbuf) { d = r_HL;    d -= r_HLbuf; }  /* 8bit 差值 */
+000101   162b     movar   0x2b             	MOVAR	_r_HL
+000102   122a     rsubar  0x2a             	RSUBAR	_r_HLbuf
+000103   3403     jbclr   0x3, 0           	JBCLR	STATUS,0
+000104   2909     goto    0x109            	GOTO	_00190_DS_
+                                           ;;genSkipc:3291: created from rifx:013B5EFC
+000105   162a     movar   0x2a             	MOVAR	_r_HLbuf
+000106   122b     rsubar  0x2b             	RSUBAR	_r_HL
+000107   1597     movra   0x17             	MOVRA	r0x100F
+000108   290c     goto    0x10c            	GOTO	_00191_DS_
+                                           _00190_DS_
+                                           ;	.line	281; "main.c"	else                { d = r_HLbuf; d -= r_HL;    }
+000109   162b     movar   0x2b             	MOVAR	_r_HL
+00010a   122a     rsubar  0x2a             	RSUBAR	_r_HLbuf
+00010b   1597     movra   0x17             	MOVRA	r0x100F
+                                           _00191_DS_
+                                           ;	.line	283; "main.c"	if (d > r_tol) { RX_PCL = 0; return; }
+00010c   1617     movar   0x17             	MOVAR	r0x100F
+00010d   122c     rsubar  0x2c             	RSUBAR	_r_tol
+00010e   3403     jbclr   0x3, 0           	JBCLR	STATUS,0
+00010f   2912     goto    0x112            	GOTO	_00196_DS_
+                                           ;;genSkipc:3291: created from rifx:013B5EFC
+000110   1da2     clrr    0x22             	CLRR	_RX_PCL
+000111   292a     goto    0x12a            	GOTO	_00201_DS_
+                                           _00196_DS_
+                                           ;	.line	286; "main.c"	r_l_delay = 0;
+000112   1da4     clrr    0x24             	CLRR	_r_l_delay
+                                           ;	.line	287; "main.c"	r_h_delay = 1;
+000113   0b01     movai   0x1              	MOVAI	0x01
+000114   15a3     movra   0x23             	MOVRA	_r_h_delay
+                                           ;	.line	288; "main.c"	bit_count++;
+000115   19a5     incr    0x25             	INCR	_bit_count
+                                           ;;unsigned compare: left < lit(0x4=4), size=1
+                                           ;	.line	290; "main.c"	if (bit_count >= VALID_BITS)
+000116   0b04     movai   0x4              	MOVAI	0x04
+000117   1225     rsubar  0x25             	RSUBAR	_bit_count
+000118   3003     jbset   0x3, 0           	JBSET	STATUS,0
+000119   292a     goto    0x12a            	GOTO	_00201_DS_
+                                           ;;genSkipc:3291: created from rifx:013B5EFC
+                                           ;	.line	292; "main.c"	f_dataout = 1;
+00011a   0b01     movai   0x1              	MOVAI	0x01
+00011b   15ad     movra   0x2d             	MOVRA	_f_dataout
+                                           ;	.line	293; "main.c"	activity  = (u16)r_HLbuf * 32;
+00011c   162a     movar   0x2a             	MOVAR	_r_HLbuf
+00011d   1597     movra   0x17             	MOVRA	r0x100F
+00011e   1d98     clrr    0x18             	CLRR	r0x1010
+00011f   1118     swapar  0x18             	SWAPAR	r0x1010
+000120   0df0     andai   0xf0             	ANDAI	0xf0
+000121   159c     movra   0x1c             	MOVRA	(_activity + 1)
+000122   1117     swapar  0x17             	SWAPAR	r0x100F
+000123   159b     movra   0x1b             	MOVRA	_activity
+000124   0d0f     andai   0xf              	ANDAI	0x0f
+000125   179c     orra    0x1c             	ORRA	(_activity + 1)
+000126   109b     xorra   0x1b             	XORRA	_activity
+000127   3c03     bclr    0x3, 0           	BCLR	STATUS,0
+000128   149b     rlr     0x1b             	RLR	_activity
+000129   149c     rlr     0x1c             	RLR	(_activity + 1)
+                                           _00201_DS_
+                                           ;	.line	296; "main.c"	}
+00012a   000c     return                   	RETURN	
+                                           ; exit point of _RX_DATA_HL
+                                           
+                                           ;***
+                                           ;  pBlock Stats: dbName = C
+                                           ;***
+                                           ;entry:  _RX_START	;Function start
+                                           ; 2 exit points
+                                           ;has an exit
+                                           ;; Starting pCode block
+                                           _RX_START	;Function start
+                                           ; 2 exit points
+                                           ;	.line	196; "main.c"	r_l_delay = 0;
+00012b   1da4     clrr    0x24             	CLRR	_r_l_delay
+                                           ;	.line	197; "main.c"	r_h_delay = 1;
+00012c   0b01     movai   0x1              	MOVAI	0x01
+00012d   15a3     movra   0x23             	MOVRA	_r_h_delay
+                                           ;	.line	198; "main.c"	f_hl = 0;
+00012e   3da1     bclr    0x21, 0x3        	BCLR	_flag1,3
+                                           ;	.line	199; "main.c"	f_getRfDataBits = 0;
+00012f   3e21     bclr    0x21, 0x4        	BCLR	_flag1,4
+                                           ;	.line	200; "main.c"	bit_count = 0;
+000130   1da5     clrr    0x25             	CLRR	_bit_count
+                                           ;	.line	201; "main.c"	if (io_rfdata)
+000131   3206     jbset   0x6, 0x4         	JBSET	_P1bits,4
+000132   2934     goto    0x134            	GOTO	_00159_DS_
+                                           ;	.line	203; "main.c"	RX_PCL++;
+000133   19a2     incr    0x22             	INCR	_RX_PCL
+                                           _00159_DS_
+                                           ;	.line	205; "main.c"	}
+000134   000c     return                   	RETURN	
+                                           ; exit point of _RX_START
+                                           
+                                           ;***
+                                           ;  pBlock Stats: dbName = C
+                                           ;***
+                                           ;entry:  _Sys_Init	;Function start
+                                           ; 2 exit points
+                                           ;has an exit
+                                           ;functions called:
+                                           ;   _CLR_RAM
+                                           ;   _IO_Init
+                                           ;   _TIMER0_LP_Init
+                                           ;   _TIMER1_INT_Init
+                                           ;   _CLR_RAM
+                                           ;   _IO_Init
+                                           ;   _TIMER0_LP_Init
+                                           ;   _TIMER1_INT_Init
+                                           ;; Starting pCode block
+                                           _Sys_Init	;Function start
+                                           ; 2 exit points
+                                           ;	.line	170; "main.c"	GIE = 0;
+000135   3f8e     bclr    0xe, 0x7         	BCLR	_INTEbits,7
+                                           ;	.line	172; "main.c"	RX_PCL = 0;
+000136   1da2     clrr    0x22             	CLRR	_RX_PCL
+                                           ;	.line	173; "main.c"	r_h_delay = 0;
+000137   1da3     clrr    0x23             	CLRR	_r_h_delay
+                                           ;	.line	174; "main.c"	r_l_delay = 0;
+000138   1da4     clrr    0x24             	CLRR	_r_l_delay
+                                           ;	.line	175; "main.c"	bit_count = 0;
+000139   1da5     clrr    0x25             	CLRR	_bit_count
+                                           ;	.line	176; "main.c"	RxTemp = 0;
+00013a   1da6     clrr    0x26             	CLRR	_RxTemp
+                                           ;	.line	177; "main.c"	r_HL = 0;
+00013b   1dab     clrr    0x2b             	CLRR	_r_HL
+                                           ;	.line	178; "main.c"	r_HLbuf = 0;
+00013c   1daa     clrr    0x2a             	CLRR	_r_HLbuf
+                                           ;	.line	179; "main.c"	r_tol = 0;
+00013d   1dac     clrr    0x2c             	CLRR	_r_tol
+                                           ;	.line	180; "main.c"	r_Timer1 = 0;
+00013e   1d9d     clrr    0x1d             	CLRR	_r_Timer1
+00013f   1d9e     clrr    0x1e             	CLRR	(_r_Timer1 + 1)
+                                           ;;gen.c:6651: size=0, offset=0, AOP_TYPE(res)=8
+                                           ;	.line	181; "main.c"	flag1.byte = 0;
+000140   1da1     clrr    0x21             	CLRR	(_flag1 + 0)
+                                           ;	.line	182; "main.c"	f_dataout = 0;
+000141   1dad     clrr    0x2d             	CLRR	_f_dataout
+                                           ;	.line	183; "main.c"	activity = 0;
+000142   1d9b     clrr    0x1b             	CLRR	_activity
+000143   1d9c     clrr    0x1c             	CLRR	(_activity + 1)
+                                           ;	.line	185; "main.c"	CLR_RAM();
+000144   2178     call    0x178            	CALL	_CLR_RAM
+                                           ;	.line	186; "main.c"	IO_Init();
+000145   216e     call    0x16e            	CALL	_IO_Init
+                                           ;	.line	187; "main.c"	TIMER0_LP_Init();
+000146   2167     call    0x167            	CALL	_TIMER0_LP_Init
+                                           ;	.line	188; "main.c"	TIMER1_INT_Init();
+000147   215e     call    0x15e            	CALL	_TIMER1_INT_Init
+                                           ;	.line	190; "main.c"	GIE = 1;
+000148   3b8e     bset    0xe, 0x7         	BSET	_INTEbits,7
+                                           ;	.line	191; "main.c"	}
+000149   000c     return                   	RETURN	
+                                           ; exit point of _Sys_Init
+                                           
+                                           ;***
+                                           ;  pBlock Stats: dbName = C
+                                           ;***
+                                           ;entry:  _Clk_High_Init	;Function start
+                                           ; 2 exit points
+                                           ;has an exit
+                                           ;2 compiler assigned registers:
+                                           ;   r0x100F
+                                           ;   r0x1010
+                                           ;; Starting pCode block
+                                           _Clk_High_Init	;Function start
+                                           ; 2 exit points
+                                           ;	.line	149; "main.c"	HFEN = 1;               /* 使能 16MHz 高频 RC */
+00014a   3842     bset    0x42, 0          	BSET	_OSCMRbits,0
+                                           ;	.line	151; "main.c"	while (!STBH)
+00014b   1d97     clrr    0x17             	CLRR	r0x100F
+00014c   1d98     clrr    0x18             	CLRR	r0x1010
+                                           _00131_DS_
+00014d   3642     jbclr   0x42, 0x4        	JBCLR	_OSCMRbits,4
+00014e   295c     goto    0x15c            	GOTO	_00133_DS_
+                                           ;	.line	153; "main.c"	ClrWdt();
+00014f   000e     clrwdt                   	clrwdt	
+                                           ;	.line	154; "main.c"	if (++t > 2000)     /* 起振超时: 停止喂狗, 由WDT复位, 避免死等 */
+000150   1997     incr    0x17             	INCR	r0x100F
+000151   3503     jbclr   0x3, 0x2         	JBCLR	STATUS,2
+000152   1998     incr    0x18             	INCR	r0x1010
+                                           ;;swapping arguments (AOP_TYPEs 1/2)
+                                           ;;unsigned compare: left >= lit(0x7D1=2001), size=2
+000153   0b07     movai   0x7              	MOVAI	0x07
+000154   1218     rsubar  0x18             	RSUBAR	r0x1010
+000155   3103     jbset   0x3, 0x2         	JBSET	STATUS,2
+000156   2959     goto    0x159            	GOTO	_00148_DS_
+000157   0bd1     movai   0xd1             	MOVAI	0xd1
+000158   1217     rsubar  0x17             	RSUBAR	r0x100F
+                                           _00148_DS_
+000159   3003     jbset   0x3, 0           	JBSET	STATUS,0
+00015a   294d     goto    0x14d            	GOTO	_00131_DS_
+                                           ;;genSkipc:3291: created from rifx:013B5EFC
+                                           _00127_DS_
+                                           ;	.line	156; "main.c"	while (1) { }
+00015b   295b     goto    0x15b            	GOTO	_00127_DS_
+                                           _00133_DS_
+                                           ;	.line	159; "main.c"	CLKS = 0;               /* 系统时钟切回高频 FCPU=8MHz */
+00015c   3d42     bclr    0x42, 0x2        	BCLR	_OSCMRbits,2
+                                           ;	.line	160; "main.c"	}
+00015d   000c     return                   	RETURN	
+                                           ; exit point of _Clk_High_Init
+                                           
+                                           ;***
+                                           ;  pBlock Stats: dbName = C
+                                           ;***
+                                           ;entry:  _TIMER1_INT_Init	;Function start
+                                           ; 2 exit points
+                                           ;has an exit
+                                           ;; Starting pCode block
+                                           _TIMER1_INT_Init	;Function start
+                                           ; 2 exit points
+                                           ;	.line	130; "main.c"	T1CR   = 0x02;      /* CPU 时钟, /8  (8MHz/8 = 1MHz) */
+00015e   0b02     movai   0x2              	MOVAI	0x02
+00015f   15cc     movra   0x4c             	MOVRA	_T1CR
+                                           ;	.line	131; "main.c"	T1CNT  = 32;        /* 33 计数 -> 33us */
+000160   0b20     movai   0x20             	MOVAI	0x20
+000161   15cd     movra   0x4d             	MOVRA	_T1CNT
+                                           ;	.line	132; "main.c"	T1LOAD = 32;
+000162   0b20     movai   0x20             	MOVAI	0x20
+000163   15ce     movra   0x4e             	MOVRA	_T1LOAD
+                                           ;	.line	133; "main.c"	T1EN   = 1;
+000164   3bcc     bset    0x4c, 0x7        	BSET	_T1CRbits,7
+                                           ;	.line	134; "main.c"	T1IE   = 1;
+000165   38cb     bset    0x4b, 0x1        	BSET	_TMRCRbits,1
+                                           ;	.line	135; "main.c"	}
+000166   000c     return                   	RETURN	
+                                           ; exit point of _TIMER1_INT_Init
+                                           
+                                           ;***
+                                           ;  pBlock Stats: dbName = C
+                                           ;***
+                                           ;entry:  _TIMER0_LP_Init	;Function start
+                                           ; 2 exit points
+                                           ;has an exit
+                                           ;; Starting pCode block
+                                           _TIMER0_LP_Init	;Function start
+                                           ; 2 exit points
+                                           ;	.line	114; "main.c"	TMRCR |= 0x40;           /* T0 时钟源 = 低频 FLIRC 32kHz */
+000167   3b4b     bset    0x4b, 0x6        	BSET	_TMRCR,6
+                                           ;	.line	115; "main.c"	T0CR  = 0x05;       /* ÷64 预分频 + T0PTA=0(预分频给T0, WDT 1:1) */
+000168   0b05     movai   0x5              	MOVAI	0x05
+000169   1589     movra   0x9              	MOVRA	_T0CR
+                                           ;	.line	116; "main.c"	T0CNT = 256 - 100;  /* 100 计数 x 2ms = 200ms */
+00016a   0b9c     movai   0x9c             	MOVAI	0x9c
+00016b   1581     movra   0x1              	MOVRA	_T0CNT
+                                           ;	.line	117; "main.c"	T0IE  = 1;
+00016c   380e     bset    0xe, 0           	BSET	_INTEbits,0
+                                           ;	.line	118; "main.c"	}
+00016d   000c     return                   	RETURN	
+                                           ; exit point of _TIMER0_LP_Init
+                                           
+                                           ;***
+                                           ;  pBlock Stats: dbName = C
+                                           ;***
+                                           ;entry:  _IO_Init	;Function start
+                                           ; 2 exit points
+                                           ;has an exit
+                                           ;; Starting pCode block
+                                           _IO_Init	;Function start
+                                           ; 2 exit points
+                                           ;	.line	99; "main.c"	P1     = 0x2F;      /* P13=1 P15=1, P10/11/12=1 */
+00016e   0b2f     movai   0x2f             	MOVAI	0x2f
+00016f   1586     movra   0x6              	MOVRA	_P1
+                                           ;	.line	100; "main.c"	DDR1   = 0x10;      /* 1:输入 0:输出 -> 只有 P14 是输入 */
+000170   0b10     movai   0x10             	MOVAI	0x10
+000171   15c6     movra   0x46             	MOVRA	_DDR1
+                                           ;	.line	101; "main.c"	PUCON1 = 0xFF;     
+000172   0bff     movai   0xff             	MOVAI	0xff
+000173   158c     movra   0xc              	MOVRA	_PUCON1
+                                           ;	.line	102; "main.c"	PDCON1 = 0xFF;      /* 下拉全禁 */
+000174   0bff     movai   0xff             	MOVAI	0xff
+000175   158b     movra   0xb              	MOVRA	_PDCON1
+                                           ;	.line	103; "main.c"	ODCON1 = 0x00;      /* 推挽 */
+000176   1d8d     clrr    0xd              	CLRR	_ODCON1
+                                           ;	.line	104; "main.c"	}
+000177   000c     return                   	RETURN	
+                                           ; exit point of _IO_Init
+                                           
+                                           ;***
+                                           ;  pBlock Stats: dbName = C
+                                           ;***
+                                           ;entry:  _CLR_RAM	;Function start
+                                           ; 2 exit points
+                                           ;has an exit
+                                           ;; Starting pCode block
+                                           _CLR_RAM	;Function start
+                                           ; 2 exit points
+                                           ;	.line	81; "main.c"	for (FSR = 0xBF; FSR > 0x8F; FSR--)
+000178   0bbf     movai   0xbf             	MOVAI	0xbf
+000179   1584     movra   0x4              	MOVRA	_FSR
+                                           ;;swapping arguments (AOP_TYPEs 1/3)
+                                           ;;unsigned compare: left >= lit(0x90=144), size=1
+                                           _00107_DS_
+00017a   0b90     movai   0x90             	MOVAI	0x90
+00017b   1204     rsubar  0x4              	RSUBAR	_FSR
+00017c   3003     jbset   0x3, 0           	JBSET	STATUS,0
+00017d   2981     goto    0x181            	GOTO	_00109_DS_
+                                           ;;genSkipc:3291: created from rifx:013B5EFC
+                                           ;	.line	83; "main.c"	INDF = 0;
+00017e   1d80     clrr    0                	CLRR	_INDF
+                                           ;	.line	81; "main.c"	for (FSR = 0xBF; FSR > 0x8F; FSR--)
+00017f   1b84     decr    0x4              	DECR	_FSR
+000180   297a     goto    0x17a            	GOTO	_00107_DS_
+                                           _00109_DS_
+                                           ;	.line	85; "main.c"	}
+000181   000c     return                   	RETURN	
+                                           ; exit point of _CLR_RAM
+                                           
+                                           
+                                           ;	code size estimation:
+                                           ;	  363+    0 =   363 instructions (  726 byte)
+                                           
+                                           	end
+
+
+MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
+
+0000 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0040 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0080 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+00C0 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0100 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0140 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0180 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+01C0 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0200 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0240 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0280 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+02C0 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0300 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0340 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0380 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+03C0 : XXXXXXXXXXXXXXXX ---------------- ---------------- ----------------
+
+All other memory blocks unused.
+
+Program Memory Words Used:   488
+
