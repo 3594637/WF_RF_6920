@@ -29,6 +29,28 @@
 #define ST_SLEEP     2          /* 休眠 200ms */
 
 
+/* ====================== 片选等级(PT11/PT12) ====================== */
+#define WIN_L0        200      /* 6.06ms */
+#define WIN_L1        333      /* 11.0ms */
+#define WIN_L2        485      /* 16.0ms */
+#define EXT_L0        300      /* 9.9ms  */
+#define EXT_L1        620      /* 20.5ms */
+#define EXT_L2        850      /* 28.0ms */
+#define BIT_TK_L0     16       /* 位宽中值 10k=12, 5k=19   */
+#define BIT_TK_L1     35       /* 4k=30, 2.86k=42          */
+#define BIT_TK_L2     54       /* 2.5k=48, 2k=61           */
+#define WIN_EXT_MAX   788      /* 动态延长上限 26ms        */
+#define SYNC_MIN      90       /* 同步总宽下限 90 tick(3ms)   */
+#define SYNC_MAX      520      /* 同步总宽上限 520 tick(17ms) */
+#define BIT_TICK_MIN  12
+#define BIT_TICK_MAX  61
+
+#define WIN_EXT_OF(lv)  ((lv) == 0 ? EXT_L0 : ((lv) == 1 ? EXT_L1 : EXT_L2))
+
+u8  level      = 0;            /* 0/1/2 当前档 */
+u16 win_ticks  = WIN_L0;       /* 当前窗口 */
+u8  bit_ticks  = BIT_TK_L0;    /* 当前位宽基准 */
+
 //============Define  Flag=================
 typedef union {
    	unsigned char byte;
@@ -50,24 +72,21 @@ bit_flag flag1;
 #define f_hl                flag1.bits.bit3     
 #define f_getRfDataBits     flag1.bits.bit4     
 #define f_int_rx            flag1.bits.bit5    
-#define f_int_TMR0          flag1.bits.bit6     
+#define f_int_TMR0          flag1.bits.bit6  
+#define f_synced            flag1.bits.bit7   
 
       
-u8  RX_PCL = 0;         /* 0=空闲 1=解码中 */
-u8  r_h_delay = 0;
-u8  r_l_delay = 0;
-u8  bit_count = 0;
-u8  RxTemp = 0;
-u8  RxCode1 = 0;
-u8  RxCode2 = 0;
-u8  RxCode4 = 0;
-u8  r_HLbuf = 0;
-u8  r_HL = 0;
-u8  r_tol = 0;          /* 位宽一致容差(相对) */
-u8  f_dataout = 0; 
-u16 activity = 0;
-u16 r_Timer1 = 0; 
-u8  sys_state = ST_LISTEN;
+u8  RX_PCL 	   	= 0;          /* 0=空闲 1=解码中 */
+u8  r_h_delay  	= 0;
+u8  bit_count  	= 0;
+u8  r_tol  	   	= 0;          /* 位宽一致容差(相对) */
+u8  f_dataout  	= 0; 
+u8  sys_state  	= ST_LISTEN;
+u16 activity   	= 0;
+u16 r_Timer1   	= 0; 
+u16 r_l_delay  	= 0;   	   	  /* 同步低最长 470 tick */
+u16 r_HLbuf    	= 0;
+
 
 
 /************************************************
@@ -103,6 +122,32 @@ void IO_Init(void)
     ODCON1 = 0x00;      /* 推挽 */
 }
 
+
+/************************************************
+;  *    @函数名            : Level_Init
+;  *    @说明              : 片选读等级, PT11/PT12 内部上拉
+;  *                        00=L0 10k~5k / 01=L1 4k ~ 2.86k / 10或11=L2  2.8k ~ 2k
+;  ***********************************************/
+void Level_Init(void)
+{
+    DDR1   |= (DEF_SET_BIT1 | DEF_SET_BIT2);      /* PT11/PT12 输入 */
+    PUCON1 &= (u8)~(DEF_SET_BIT1 | DEF_SET_BIT2); /* 上拉有效 */
+    Nop();
+    Nop();
+    Nop();
+
+    if (P11D)            level = 2;
+    else if (P12D)       level = 1;
+    else                 level = 0;
+
+   	level = 0; //测试
+ 
+    if (level == 0)      { win_ticks = WIN_L0; bit_ticks = BIT_TK_L0; }
+    else if (level == 1) { win_ticks = WIN_L1; bit_ticks = BIT_TK_L1; }
+    else                 { win_ticks = WIN_L2; bit_ticks = BIT_TK_L2; }
+}
+
+
 /************************************************
 ;  *    @函数名            : TIMER0_LP_Init
 ;  *    @说明              : 定时器T0
@@ -112,8 +157,8 @@ void IO_Init(void)
 void TIMER0_LP_Init(void)
 {
     TMRCR |= 0x40;           /* T0 时钟源 = 低频 FLIRC 32kHz */
-    T0CR  = 0x05;       /* ÷64 预分频 + T0PTA=0(预分频给T0, WDT 1:1) */
-    T0CNT = 256 - 100;  /* 100 计数 x 2ms = 200ms */
+    T0CR  = 0x05;           /* ÷64 预分频 + T0PTA=0(预分频给T0, WDT 1:1) */
+    T0CNT = 256 - 100;       /* 100 计数 x 2ms = 200ms */
     T0IE  = 1;
 }
 
@@ -167,23 +212,22 @@ void Clk_High_Init(void)
 ;  ***********************************************/
 void Sys_Init(void)
 {
-    GIE = 0;
+    GIE    	   	= 0;
 
-    RX_PCL = 0;
-    r_h_delay = 0;
-    r_l_delay = 0;
-    bit_count = 0;
-    RxTemp = 0;
-    r_HL = 0;
-    r_HLbuf = 0;
-    r_tol = 0;
-    r_Timer1 = 0;
-    flag1.byte = 0;
-    f_dataout = 0;
-   	activity = 0;
+    RX_PCL 	   	= 0;
+    r_h_delay  	= 0;
+    r_l_delay  	= 0;
+    bit_count  	= 0;
+    r_HLbuf    	= 0;
+    r_tol  	   	= 0;
+    r_Timer1   	= 0;
+    flag1.byte 	= 0;
+    f_dataout  	= 0;
+   	activity   	= 0;
 
     CLR_RAM();
     IO_Init();
+   	Level_Init(); 
    	TIMER0_LP_Init();
     TIMER1_INT_Init();
 
@@ -193,15 +237,34 @@ void Sys_Init(void)
 /* ======================== RFRX================ */
 static void RX_START(void)
 {
-    r_l_delay = 0;
-    r_h_delay = 1;
-    f_hl = 0;
-    f_getRfDataBits = 0;
-    bit_count = 0;
-    if (io_rfdata)
+    if (io_rfdata)                  /* 高: 开始解码 */
     {
+        r_l_delay = 0;
+        r_h_delay = 1;
+        f_hl = 0;
+        f_getRfDataBits = 0;
+        bit_count = 0;
         RX_PCL++;
     }
+    else                            /* 低: 空闲时也累计, 供延长判断 */
+    {
+        if (r_l_delay < 600) r_l_delay++;
+    }
+}
+
+/************************************************
+;  *    @函数名            : RX_RESET
+;  *    @说明              : 每个监听窗口开始前复位解码器
+;  ***********************************************/
+static void RX_RESET(void)
+{
+    RX_PCL = 0;
+    r_h_delay = 0;
+    r_l_delay = 0;
+    f_hl = 0;
+    f_getRfDataBits = 0;
+    f_synced = 0;
+    bit_count = 0;
 }
 
 /********************************************************************
@@ -213,11 +276,11 @@ static void RX_START(void)
 ********************************************************************/
 static void RX_DATA_HL(void)
 {
-    u8 d, t;
+    u16 hl, t, d;
 
     if (io_rfdata)                  /* 高电平 */
     {
-        if (f_hl)                   /* 低->高, 上升沿 */
+        if (f_hl)                   /* 低->高: 结算上一个电平对 */
         {
             f_hl = 0;
             f_getRfDataBits = 1;
@@ -228,70 +291,80 @@ static void RX_DATA_HL(void)
             if (r_h_delay > LEVEL_TOUT) { RX_PCL = 0; return; }
         }
     }
-    else                            /* 低电平 */
+    else                            /* 低电平: 只计数, 不结算 */
     {
         f_hl = 1;
-        r_l_delay++;
-        if (r_l_delay > LEVEL_TOUT) { RX_PCL = 0; return; }
+        if (r_l_delay < 600) r_l_delay++;
+        return;
     }
 
-    if (f_getRfDataBits)
+    if (!f_getRfDataBits) return;
+    f_getRfDataBits = 0;
+
+    hl = (u16)r_h_delay + r_l_delay;
+
+    /* ---------- 1. 同步头: 长低 + 短高 ---------- */
+    if (r_l_delay > LEVEL_TOUT)
     {
-        f_getRfDataBits = 0;
-        RxTemp <<= 1;
-
-        if (r_h_delay > r_l_delay)          /* 高>低 -> 1 */
+        /* 低至少是高的 8 倍(数据位最大 3:1), 总宽 90~520 tick */
+        if ((r_l_delay >= ((u16)r_h_delay << 3)) && (hl >= SYNC_MIN) && (hl <= SYNC_MAX))
         {
-            t  = r_l_delay;
-            t += t;                          /* 2*低, 8bit */
-            if (r_h_delay < t) { RX_PCL = 0; return; }   /* <2:1 噪声 */
-            RxTemp |= 0x01;
+            bit_ticks = (u8)(hl >> 3);      /* 128α/8 = 16α */
+            if (bit_ticks < BIT_TICK_MIN) bit_ticks = BIT_TICK_MIN;
+            if (bit_ticks > BIT_TICK_MAX) bit_ticks = BIT_TICK_MAX;
+            f_synced = 1;
         }
-        else if (r_h_delay < r_l_delay)     /* 高<低 -> 0 */
-        {
-            t  = r_h_delay;
-            t += t;                          /* 2*高, 8bit */
-            if (r_l_delay < t) { RX_PCL = 0; return; }
-            RxTemp &= 0xfe;
-        }
-        else
-        {
-            RX_PCL = 0;
-            return;
-        }
-
-        r_HL = r_h_delay + r_l_delay;
-
-        if (r_HL < BIT_MIN || r_HL > BIT_MAX)
-        {
-            RX_PCL = 0;
-            return;
-        }
-
-        if (bit_count == 0)
-        {
-            r_HLbuf = r_HL;
-        }
-        else
-        {
-            r_tol = r_HLbuf >> 2;
-            if (r_tol < 2) { r_tol = 2; }
-
-            if (r_HL > r_HLbuf) { d = r_HL;    d -= r_HLbuf; }  /* 8bit 差值 */
-            else                { d = r_HLbuf; d -= r_HL;    }
-
-            if (d > r_tol) { RX_PCL = 0; return; }
-        }
-
+        bit_count = 0;
         r_l_delay = 0;
         r_h_delay = 1;
-        bit_count++;
+        return;
+    }
 
-        if (bit_count >= VALID_BITS)
-        {
-            f_dataout = 1;
-            activity  = (u16)r_HLbuf * 32;
-        }
+    /* ---------- 2. 数据位: 先看总宽 ---------- */
+    t = (u16)bit_ticks;
+    if (f_synced)
+    {
+        if (hl < (t - (t >> 2)) || hl > (t + (t >> 2))) { RX_PCL = 0; return; }
+    }
+    else    /* 没抓到同步: 用等级基准放宽到 ±37.5% */
+    {
+        if (hl < (t - (t >> 2) - (t >> 3))) { RX_PCL = 0; return; }
+        if (hl > (t + (t >> 2) + (t >> 3))) { RX_PCL = 0; return; }
+    }
+
+    /* ---------- 3. 判 0/1: 比例 + 幅值 ---------- */
+    if (r_h_delay > r_l_delay)                  /* 高>低 -> 1 */
+    {
+        if (r_h_delay < (r_l_delay << 1)) { RX_PCL = 0; return; }
+    }
+    else if (r_h_delay < r_l_delay)             /* 高<低 -> 0 */
+    {
+        if (r_l_delay < ((u16)r_h_delay << 1)) { RX_PCL = 0; return; }
+    }
+    else { RX_PCL = 0; return; }
+
+    /* ---------- 4. 帧内一致性 ---------- */
+    if (bit_count == 0)
+    {
+        r_HLbuf = hl;
+    }
+    else
+    {
+        r_tol = (u8)(r_HLbuf >> 2);
+        if (r_tol < 2) r_tol = 2;
+        if (hl > r_HLbuf) d = hl - r_HLbuf;
+        else              d = r_HLbuf - hl;
+        if (d > r_tol) { RX_PCL = 0; return; }
+    }
+
+    r_l_delay = 0;
+    r_h_delay = 1;
+    bit_count++;
+
+    if (bit_count >= VALID_BITS)
+    {
+        f_dataout = 1;
+        activity  = (u16)r_HLbuf * 32;
     }
 }
 
@@ -337,6 +410,7 @@ void main(void)
         /* ---- 监听: 开接收, 等 1ms 启动, 听 10ms ---- */
         case ST_LISTEN:
             io_RxEnable = 0;              /* 接收开 */
+            RX_RESET();
             r_Timer1 = 0;
             while (r_Timer1 < 30)         /* 30×33us ≈ 1ms 启动 */
             {
@@ -344,7 +418,7 @@ void main(void)
             }
 
             r_Timer1 = 0;
-            while (r_Timer1 < 600)        /* 100×33us ≈ 5ms 监听 */
+            while (r_Timer1 < win_ticks)  /* 基础窗口 5/12/18ms */
             {
                 ClrWdt();
                 IR_Rx_fun();
@@ -354,6 +428,24 @@ void main(void)
                     break;
                 }
             }
+
+             /* 动态延长: 卡在同步里, 或已收到几位但不够 4 位 */
+            if ((sys_state != ST_FORWARD) &&
+                ((r_l_delay > LEVEL_TOUT) ||
+                 ((bit_count > 0) && (bit_count < VALID_BITS))))
+            {
+                while (r_Timer1 < WIN_EXT_OF(level))
+                {
+                    ClrWdt();
+                    IR_Rx_fun();
+                    if (f_dataout)
+                    {
+                        sys_state = ST_FORWARD;
+                        break;
+                    }
+                }
+            }
+
             if (sys_state != ST_FORWARD)
                 sys_state = ST_SLEEP;
             break;
@@ -363,11 +455,7 @@ void main(void)
             ClrWdt();
             IR_Rx_fun();
 
-             if (f_dataout)// 转发: PT13 跟随 PT14 
-            {
-                io_OUT = io_rfdata;     
-            }
-            else
+             if (!f_dataout)
             {
                 io_OUT = 0;          
                 sys_state = ST_SLEEP;
@@ -428,6 +516,11 @@ __endasm;
 
    	   	r_Timer1++;   
         //io_dbg = !io_dbg;  
+
+   	   	if (f_dataout)// 转发: PT13 跟随 PT14 
+        {
+            io_OUT = io_rfdata;     
+        }
 
    	   	/* 超时清零：信号消失约一帧后关掉转发 */
    	   	if (f_dataout)
