@@ -46,6 +46,10 @@
 
 #define WIN_EXT_OF(lv)  ((lv) == 0 ? EXT_L0 : ((lv) == 1 ? EXT_L1 : EXT_L2))
 
+/* ====================== 睡眠周期(每计数 2ms) ====================== */
+#define SLEEP_TK_L012   50      /* L0~L2: 50 x 2ms = 100ms */
+#define SLEEP_TK_L3     125     /* L3   : 125 x 2ms = 250ms */
+
 u8  level      = 0;            /* 0/1/2 当前档 */
 u16 win_ticks  = WIN_L0;       /* 当前窗口 */
 u8  bit_ticks  = BIT_TK_L0;    /* 当前位宽基准 */
@@ -493,7 +497,10 @@ void main(void)
             io_OUT = 0;                   /* 输出高 */
             io_RxEnable = 1;              /* 接收关 */
 
-            T0CNT = 256 - 50;           /* 重装 200ms (100 x 2ms) */
+   	   	   	if(level == 3)
+                T0CNT = SLEEP_TK_L3;
+            else
+               	T0CNT = SLEEP_TK_L012;
 
             T0IF  = 0;
             T0IE  = 1;
